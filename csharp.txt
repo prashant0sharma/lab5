@@ -1,0 +1,74 @@
+using System;
+using System.Data.SqlClient;
+
+class Program
+{
+    static string connectionString = "your_connection_string_here"; // Replace with your actual connection string
+
+    static void Main(string[] args)
+    {
+        while (true)
+        {
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Create Playlist");
+            Console.WriteLine("2. Add Song to Playlist");
+            Console.WriteLine("3. Remove Song from Playlist");
+            Console.WriteLine("4. Display Playlists");
+            Console.WriteLine("5. Exit");
+            Console.Write("Enter your choice: ");
+
+            if (int.TryParse(Console.ReadLine(), out int choice))
+            {
+                switch (choice)
+                {
+                    case 1:
+                        CreatePlaylist();
+                        break;
+                    case 2:
+                        AddSongToPlaylist();
+                        break;
+                    case 3:
+                        RemoveSongFromPlaylist();
+                        break;
+                    case 4:
+                        DisplayPlaylists();
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Try again.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Try again.");
+            }
+        }
+    }
+
+    private static void CreatePlaylist()
+    {
+        // Code to create a new playlist
+        // Prompt for playlist details and insert into the database
+    }
+
+    private static void AddSongToPlaylist()
+    {
+        // Code to add a song to a playlist
+        // Prompt for playlist and song details, then insert into the PlaylistSongs table
+    }
+
+    private static void RemoveSongFromPlaylist()
+    {
+        // Code to remove a song from a playlist
+        // Prompt for playlist and song details, then delete the entry from the PlaylistSongs table
+    }
+
+    private static void DisplayPlaylists()
+    {
+        // Code to display playlists and their songs
+        // Query the database to fetch playlists and their associated songs, then display them
+    }
+}
